@@ -1,6 +1,8 @@
 import SearchComp from "./SearchComp";
 
 export default function HeaderComp() {
+
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-gray fixed-top">
             <div className="container-fluid">
