@@ -10,7 +10,7 @@ function App() {
 
   function getData() {
     axios
-      .get('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=ba')
+      .get('https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=one+piece')
       .then(res => {
         console.log(res);
         setMovies(res.data.results);
@@ -19,15 +19,13 @@ function App() {
       .finally();
   }
 
-
   function handleFetchMovies() {
     getData();
   }
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
+  useEffect(() => {
+    handleFetchMovies();
+  }, []);
 
   return (
     <>
@@ -40,8 +38,6 @@ function App() {
           movies.map((movie) => <CardComp content={movie} key={movie.id} />)
         }
 
-
-        <button onClick={handleFetchMovies}>Get Movies</button>
       </main>
     </>
   )
